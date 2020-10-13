@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.navy.jian15.repository.CityRepository">
+    <cache/>
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap id="city" type="com.navy.jianzaiji.model.jianzaiji.City">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="cityName" property="cityName" jdbcType="VARCHAR"/>
+        <result column="introuduce" property="introuduce" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getCity"  parameterType="map" resultMap="city">
+        select *
+        from COULD_CITY
+        where 1=1
+        <if test="id != null and id !=''">
+            and id = #{id}
+        </if>
+    </select>
+
+    <select id="getCityById"  parameterType="Integer" resultMap="city">
+        select *
+        from COULD_CITY
+        where 1=1
+            and id = #{id}
+    </select>
+
+    <insert id="insertCity" parameterType="city">
+        INSERT into could_city(cityName,introuduce) values (#{cityName},#{introuduce})
+    </insert>
+</mapper>

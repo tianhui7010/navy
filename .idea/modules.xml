@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/haijun/haijun.iml" filepath="$PROJECT_DIR$/haijun/haijun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hangmu_001/hangmu_001.iml" filepath="$PROJECT_DIR$/hangmu_001/hangmu_001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hangmu_002/hangmu_002.iml" filepath="$PROJECT_DIR$/hangmu_002/hangmu_002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jian-15/jian-15.iml" filepath="$PROJECT_DIR$/jian-15/jian-15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jian-16/jian-16.iml" filepath="$PROJECT_DIR$/jian-16/jian-16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jianzaiji/jianzaiji.iml" filepath="$PROJECT_DIR$/jianzaiji/jianzaiji.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navy.iml" filepath="$PROJECT_DIR$/navy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user/user.iml" filepath="$PROJECT_DIR$/user/user.iml" />
+    </modules>
+  </component>
+</project>
