@@ -16,10 +16,6 @@
     <name>jian15</name>
     <description>歼-15</description>
 
-    <properties>
-        <java.version>1.7</java.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.navy</groupId>

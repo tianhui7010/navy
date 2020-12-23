@@ -36,6 +36,12 @@ public class CityController {
     @Autowired
     private ControllerEventPubLisher publisher;
 
+    @RequestMapping("hahhahaha")
+    public Response hahhahaha() {
+        log.debug("hangmu_001 String id");
+        return Response.success("测试");
+    }
+
     /**
      * springCloud 第一种调用方式 restTemplate
      */
@@ -56,9 +62,20 @@ public class CityController {
      * springCloud 第二种调用方式 @EnableFeignClients + @FeignClient
      */
     @RequestMapping("getPerson")
-    @HystrixCommand(fallbackMethod = "fallback")
+//    @HystrixCommand(fallbackMethod = "getFallback")
     public Response getCityService(Integer id) {
         log.debug("hangmu_001 getPerson");
+        City person = cityService.getPerson(id);
+        publisher.pushListener("hangmu_001 监听器执行：getPerson");
+//        String str = null;
+//        str.toString();
+        return Response.success(person);
+    }
+
+    @RequestMapping("testYbp")
+    @HystrixCommand(fallbackMethod = "getFallback")
+    public Response testYbp(Integer id) {
+        log.debug("hangmu_001 testYbp");
         City person = cityService.getPerson(id);
         publisher.pushListener("hangmu_001 监听器执行：getPerson");
         return Response.success(person);
@@ -67,7 +84,7 @@ public class CityController {
     /**
      * springCloud hystrix 容错处理
      */
-    public Response fallback(Integer id) {
+    public Response getFallback(Integer id) {
         return Response.error("执行方法失败！由hystrix处理异常方法！");
     }
 
@@ -75,10 +92,10 @@ public class CityController {
     /**
      *
      */
-    @RequestMapping("rediSetCityName")
-    public String rediSetCityName(String cityName, String introuduce) {
+    @RequestMapping("setCityRedis")
+    public String setCityRedis(String cityName, String introuduce) {
         log.debug("hangmu_001 rediSetCityName cityName is {} introuduce is {}" ,cityName, introuduce);
-        String addResult = cityService.rediSetCityName(cityName, introuduce);
+        String addResult = cityService.setCityRedis(cityName, introuduce);
         log.debug("hangmu_001 rediSetCityName is {}" , addResult);
         return addResult;
     }

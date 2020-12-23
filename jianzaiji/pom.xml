@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.tian</groupId>
-		<artifactId>navy</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
+    <parent>
+        <groupId>com.tian</groupId>
+        <artifactId>navy</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
-	<groupId>com.navy</groupId>
-	<artifactId>jianzaiji</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>jianzaiji</name>
-	<description>舰载机(service)</description>
+    <groupId>com.navy</groupId>
+    <artifactId>jianzaiji</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>jianzaiji</name>
+    <description>舰载机(service)</description>
 
-	<properties>
-		<java.version>1.7</java.version>
-	</properties>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<classifier>exec</classifier>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <!--<plugins>-->
+        <!--<plugin>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+        <!--<configuration>-->
+        <!--<classifier>exec</classifier>-->
+        <!--</configuration>-->
+        <!--</plugin>-->
+        <!--</plugins>-->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 会生成两个jar，第一个为普通jar（只用于依赖），第二个为可执行jar-->
+                    <!-- 知识点：普通jar可被依赖，可执行jar不可被依赖，只能用于执行 -->
+                    <classifier>exec</classifier>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

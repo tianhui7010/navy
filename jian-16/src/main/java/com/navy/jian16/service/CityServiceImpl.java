@@ -4,7 +4,6 @@ import com.navy.jian16.repository.CityRepository;
 import com.navy.jianzaiji.annotation.Facade;
 import com.navy.jianzaiji.model.jianzaiji.City;
 import com.navy.jianzaiji.service.jianzaiji.CityService;
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -43,7 +42,7 @@ public class CityServiceImpl implements CityService {
 
 
     @Override
-    public String rediSetCityName(String cityName, String introuduce) {
+    public String setCityRedis(String cityName, String introuduce) {
         log.debug("rediSetCityName cityName is {} introuduce is {}",cityName,introuduce);
         City city  = new City(cityName, introuduce);
         redisTemplate.opsForValue().set(cityName,city);

@@ -16,9 +16,7 @@
 	<name>haijun</name>
 	<description>注册中心</description>
 
-	<properties>
-		<java.version>1.7</java.version>
-	</properties>
+
 
 	<dependencies>
 		<dependency>

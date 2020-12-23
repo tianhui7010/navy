@@ -42,7 +42,7 @@ public class CityServiceImpl implements CityService {
 
 
     @Override
-    public String rediSetCityName(String cityName, String introuduce) {
+    public String setCityRedis(String cityName, String introuduce) {
         log.debug("rediSetCityName cityName is {} introuduce is {}",cityName,introuduce);
         City city  = new City(cityName, introuduce);
         redisTemplate.opsForValue().set(cityName,city);
